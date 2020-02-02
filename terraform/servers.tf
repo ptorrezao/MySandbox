@@ -63,18 +63,18 @@ resource "hcloud_server" "worker" {
       "bash /root/bootstrap.sh",
     ]
   }
-  provisioner "file" {
-    source      = "${path.module}/scripts/addFloatingIP.sh"
-    destination = "/root/addFloatingIP.sh"
-  }
+  # provisioner "file" {
+  #   source      = "${path.module}/scripts/addFloatingIP.sh"
+  #   destination = "/root/addFloatingIP.sh"
+  # }
 
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /root/addFloatingIP.sh",
-      "echo ${hcloud_floating_ip.master.ip_address}",
-      "bash /root/addFloatingIP.sh ${hcloud_floating_ip.master.ip_address}",
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "chmod +x /root/addFloatingIP.sh",
+  #     "echo ${hcloud_floating_ip.master.ip_address}",
+  #     "bash /root/addFloatingIP.sh ${hcloud_floating_ip.master.ip_address}",
+  #   ]
+  # }
 
   provisioner "file" {
     source      = "${path.module}/creds/cluster_join"
