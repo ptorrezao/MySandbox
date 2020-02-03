@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: birra-rules-ingress
+  name: host-rule-ingress
   namespace: birra
 spec:
   backend:
@@ -26,17 +26,3 @@ spec:
   #     - backend:
   #         serviceName: nginxhello-blue
   #         servicePort: 80
-# ---
-# apiVersion: extensions/v1beta1
-# kind: Ingress
-# metadata:
-#   name: host-rule-ingress
-#   namespace: kube-system
-# spec:
-#   rules:
-#   - host: traefik.birra.pt
-#     http:
-#       paths:
-#       - backend:
-#           serviceName: traefik-ingress-service
-#           servicePort: 8080
