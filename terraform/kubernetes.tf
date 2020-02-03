@@ -12,13 +12,15 @@ resource "digitalocean_kubernetes_cluster" "kubernetes" {
     max_nodes  = 5
     tags       = ["${var.enviroment}"]
   }
+
+  
 }
 
 data "local_file" "getkubeconfig" {
-    filename = "${path.module}/scripts/getKubeConfig.sh"
-    depends_on = "${cluster-id}"
+  filename = "${path.module}/scripts/getKubeConfig.sh"
 }
 
+
 output "cluster-id" {
-  value = "${digitalocean_kubernetes_cluster.kubernetes.id}"
+  value = "${path.module}/scripts/getKubeConfig.sh ${var.do_token} ${digitalocean_kubernetes_cluster.kubernetes.id}  && cp creds/config  ~/.kube/config"
 }

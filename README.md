@@ -15,8 +15,9 @@
 - [ ] Deploy Kubernetes Cluster
     - Prepare helm
         ```bash
- 
+            
         ```
 - [ ] Deploy Traefik as Ingress Controller
+        https://docs.traefik.io/user-guides/crd-acme/
 - [ ] Migrate Personal Projects into k8s
 

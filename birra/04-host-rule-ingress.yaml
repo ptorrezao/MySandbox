@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: birra-rules-ingress
+  namespace: birra
+spec:
+  backend:
+    serviceName: birrafe
+    servicePort: 80
+  rules:
+  - host: birra.pt
+    http:
+      paths:
+      - backend:
+          serviceName: birrafe
+          servicePort: 80
+  # - host: traefik.birra.pt
+  #   http:
+  #     paths:
+  #     - backend:
+  #         serviceName: traefik-ingress-service
+  #         servicePort: 8080
+  # - host: blue.birra.pt
+  #   http:
+  #     paths:
+  #     - backend:
+  #         serviceName: nginxhello-blue
+  #         servicePort: 80
+# ---
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: host-rule-ingress
+#   namespace: kube-system
+# spec:
+#   rules:
+#   - host: traefik.birra.pt
+#     http:
+#       paths:
+#       - backend:
+#           serviceName: traefik-ingress-service
+#           servicePort: 8080
