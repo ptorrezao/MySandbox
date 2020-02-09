@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: birrafe
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: birrafe
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: birrafe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: birrafe
+  template:
+    metadata:
+      labels:
+        app: birrafe
+    spec:
+      containers:
+      - name: hello-kubernetes
+        image: ptorrezao/birrafe:latest
+        ports:
+        - containerPort: 80

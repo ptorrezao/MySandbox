@@ -5,7 +5,7 @@ variable "clusterZone" {
 }
 
 variable "clusterVersion" {
-  default = "1.16.2-do.3"
+  default = "1.16.6-do.0"
 }
 variable "slugSize" {
   default = "s-1vcpu-2gb"
