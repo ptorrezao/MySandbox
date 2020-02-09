@@ -19,5 +19,8 @@
         ```
 - [ ] Deploy Traefik as Ingress Controller
         https://docs.traefik.io/user-guides/crd-acme/
+        Add
+        kubectl create namespace cert-manager
+        kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.13.0/cert-manager.yaml
 - [ ] Migrate Personal Projects into k8s
 
