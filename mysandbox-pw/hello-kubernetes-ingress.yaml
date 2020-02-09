@@ -8,17 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - hw1.mysandbox.pw
-    - hw2.mysandbox.pw
+    - www.mysandbox.pw
     secretName: hello-kubernetes-tls
   rules:
-  - host: hw1.mysandbox.pw
-    http:
-      paths:
-      - backend:
-          serviceName: hello-kubernetes-first
-          servicePort: 80
-  - host: hw2.mysandbox.pw
+  - host: www.mysandbox.pw
     http:
       paths:
       - backend:
