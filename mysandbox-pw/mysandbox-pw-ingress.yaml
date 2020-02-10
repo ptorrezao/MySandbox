@@ -9,9 +9,16 @@ spec:
   tls:
   - hosts:
     - www.mysandbox.pw
+    - mysandbox.pw
     secretName: mysandbox-pw-tls
   rules:
   - host: www.mysandbox.pw
+    http:
+      paths:
+      - backend:
+          serviceName: mysandbox-pw
+          servicePort: 80
+  - host: mysandbox.pw
     http:
       paths:
       - backend:

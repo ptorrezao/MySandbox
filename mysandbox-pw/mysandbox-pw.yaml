@@ -6,7 +6,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80
   selector:
     app: mysandbox-pw
 ---
@@ -26,9 +26,6 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: paulbouwer/hello-kubernetes:1.5
+        image: ptorrezao/landingpage:latest 
         ports:
-        - containerPort: 8080
-        env:
-        - name: MESSAGE
-          value: This is My Sandbox
+        - containerPort: 80
