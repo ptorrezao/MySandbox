@@ -20,7 +20,7 @@
         ```bash
             kubectl create -f hello-kubernetes-first.yaml
             kubectl create -f hello-kubernetes-second.yaml
-            helm install stable/nginx-ingress --name nginx-ingress --set controller.publishService.enabled=true
+            helm install stable/nginx-ingress --name nginx-ingress --set controller.publishService.enabled=true --set controller.defaultBackendService=birra
         ```
 - [ ] Deploy nginx-ingress with TLS
     - Prepare TLS

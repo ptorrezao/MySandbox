@@ -20,3 +20,9 @@ spec:
       - backend:
           serviceName: birrafe
           servicePort: 80
+  - host: mysql.birra.pt
+    http:
+      paths:
+      - backend:
+          serviceName: phpmyadmin-service
+          servicePort: 80
