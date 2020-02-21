@@ -26,3 +26,9 @@ spec:
       - backend:
           serviceName: phpmyadmin-service
           servicePort: 80
+  - host: api.birra.pt
+    http:
+      paths:
+      - backend:
+          serviceName: birraapi
+          servicePort: 80
