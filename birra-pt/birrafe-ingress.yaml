@@ -12,6 +12,8 @@ spec:
   tls:
   - hosts:
     - www.birra.pt
+    - mysql.birra.pt
+    - api.birra.pt
     secretName: birra-tls
   rules:
   - host: www.birra.pt

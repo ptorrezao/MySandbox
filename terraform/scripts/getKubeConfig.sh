@@ -3,3 +3,5 @@ curl -X GET \
 -H "Authorization: Bearer $1" \
 "https://api.digitalocean.com/v2/kubernetes/clusters/$2/kubeconfig" \
 > creds/config
+
+#cp creds/config $HOME/.kube

@@ -26,7 +26,8 @@ spec:
     spec:
       containers:
       - name: birraapi
-        image: ptorrezao/birraapi:latest
+        image: ptorrezao/birraapi:master
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         env:
